@@ -13,19 +13,24 @@ const Product = ({product}) => {
   return (
     <ScProduct>
       <img src={product.image} alt={`${product.title} book`} />
-      <div className="details">
-        <h1 className="title">{product.title}</h1>
-        <div className="footer">
-          <p className="price">${product.price}</p>
+      <div className="p-2 mb-8">
+        <h1 className="mb-8 font-extrabold text-2xl ">{product.title}</h1>
+        <div className="flex justify-between items-center stroke-emerald-400">
 
-          <button onClick={() => 
-            {cart.includes(product) ? removeItem(product.id) : addItem(product)}}>
-            {cart.includes(product) ? "Added" : "Add to cart"}
+          <div className="ml-4 font-semibold text-gray-600 ">${product.price}</div>
+          <div className="flex items-end font-semibold ">
+          <button className={cart.includes(product) ? "text-red-500 bg-red-50 hover:bg-red-100 p-2 m-2 rounded-xl " : "hidden p-2 m-2"}
+              disabled={cart.includes(product) ? false : true}
+              onClick={() => removeItem(product.id)}
+            >
+              Delete
           </button>
 
-          <button onClick={() => removeItem(product.id)}>
-            Delete
-          </button>
+          <button className="p-2 m-2 box-border bg-green-200 hover:bg-green-300 text-green-800 rounded-xl "
+              onClick={() => 
+                {cart.includes(product) ? removeItem(product.id) : addItem(product)}}>
+                {cart.includes(product) ? "Added" : "Add to cart"}
+          </button></div>
         </div>
       </div>
     </ScProduct>

@@ -58,18 +58,6 @@ body {
   margin: 0 auto;
 }
 
-button {
-  border-radius: 3px;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid lightcoral;
-  background-color: transparent;
-  transition: 0.15s ease-in-out;
-  color: lightcoral;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-
-button:hover {
-  background-color: lightcoral;
-  color: white;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
